@@ -1,0 +1,27 @@
+import random
+
+def zahlenraten():
+    print("Добро пожаловать в игру по угадыванию чисел!") 
+    nummer = random.randint(1, 100) 
+    versuche = 0 
+
+    while True: 
+        tipp = input("Угадайте число от 1 до 100:") 
+        versuche += 1 
+
+        if not tipp.isdigit(): 
+            print("Пожалуйста, введите действительный номер.") 
+            continue 
+
+        tipp = int(tipp) 
+
+        if tipp < nummer: 
+            print("Слишком низко!") 
+        elif tipp > nummer: 
+            print("Слишком высоко!")
+        else: 
+            print(f"Поздравляем! У вас есть номер {nummer} в {versuche} Попробуйте угадать.") 
+            break
+
+if __name__ == "__main__":
+    zahlenraten()
